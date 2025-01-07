@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>XiAO DiNG DoNG · Home</title>
+    <title>MAGA · Home</title>
     <link rel="stylesheet" href="{{ asset('css\public\home.css') }}">
     <link rel="icon" href="{{ asset('images\icon.png') }}"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -32,21 +32,21 @@
     <div class="home-body">
         <div class="main">
             <div class="main-title1">
-                <h1>菜单 | Menu</h1>
+                <h1>Menu</h1>
             </div>
             <div class="main-buttons">
                 <button class="button">
-                    <a href="{{route('mainCourse')}}">主菜 | Main Course</a>
+                    <a href="{{route('mainCourse')}}">Main Course</a>
                 </button>
                 <button class="button">
-                    <a href="{{route('beverages')}}">饮料 | Beverages</a>
+                    <a href="{{route('beverages')}}">Beverages</a>
                 </button>
                 <button class="button">
-                    <a href="{{route('desserts')}}">甜点 | Desserts</a>
+                    <a href="{{route('desserts')}}">Desserts</a>
                 </button>
             </div>
             <div class="main-title2">
-                <h3>食品和饮料 | Food & Beverages</h3>
+                <h3>Food & Beverages</h3>
             </div>
             @if(count($menu)!=0)
                 <div class="main-desc">

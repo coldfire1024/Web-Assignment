@@ -1,6 +1,6 @@
 <form class="edit-profile-form" method="POST" action="{{ route('checkout') }}">
     @csrf
-    <h1 class="edit-profile-form-title">编辑个人资料 | Checkout</h1>
+    <h1 class="edit-profile-form-title">Checkout</h1>
     <h2 class="subtitle">Billing Information</h2>
     <div class="form-top">
         <div class="edit-profile-form-input-field">

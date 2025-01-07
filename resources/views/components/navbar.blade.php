@@ -4,7 +4,7 @@
     <div class="navbar-section-left">
         <div class="navbar-brand">
             <x-rpg-knife-fork class="navbar-brand-logo" />
-            <div class="navbar-brand-name">XiAO DiNG DoNG</div>
+            <div class="navbar-brand-name">MAGA</div>
         </div>
         <div class="navbar-links">
             <a href="{{ route('home') }}">Home</a>

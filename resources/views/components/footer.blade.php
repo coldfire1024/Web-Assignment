@@ -7,6 +7,6 @@
         <img src="{{ asset('storage/sosmed/ig.png') }}" alt="Instagram" title="Instagram">
     </div>
     <div class="bottom">
-        <p>&copy; 2023 XiAo DiNG DoNG. All rights reserved.</p>
+        <p>&copy; 2025 MAGA Food Company. All rights reserved.</p>
     </div>
 </footer>

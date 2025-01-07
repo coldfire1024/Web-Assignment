@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XiAO DiNG DoNG · Update</title>
+    <title>MAGA · Update</title>
     <link rel="stylesheet" href="{{ asset('css/auth/update.css') }}">
     <link rel="icon" href="{{ asset('images\icon.png') }}"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -23,7 +23,7 @@
     @endif
     <div class="update-body">
         <div class="update-title">
-            <h1>添加新食物 | Update Food</h1>
+            <h1>Update Food</h1>
         </div>
         <form action="{{ route('updateMenu', ['food_id' => $food_id]) }}" method="post" enctype="multipart/form-data" class="form-body">
             @csrf

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>XiAO DiNG DoNG · Manage</title>
+    <title>MAGA · Manage</title>
     <link rel="stylesheet" href="{{ asset('css/auth/manage.css') }}">
     <link rel="icon" href="{{ asset('images\icon.png') }}"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -15,7 +15,7 @@
     <div class="manage-body">
         <div class="manage-main">
             <div class="manage-title">
-                <h2>搜索食物 | Manage Foods</h2>
+                <h2> Manage Foods</h2>
             </div>
             <div class="manage-form">
                 <form action="{{route('resultM')}}" method="POST">

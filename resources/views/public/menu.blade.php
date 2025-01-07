@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>XiAO DiNG DoNG · Detail</title>
+    <title>MAGA · Detail</title>
     <link rel="stylesheet" href="{{ asset('css/public/menu.css') }}">
     <link rel="icon" href="{{ asset('images\icon.png') }}"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -22,7 +22,7 @@
     <x-Navbar/>
     <div class="detail-body">
         <div class="detail-title">
-            <h1>食物细节 | Food Detail</h1>
+            <h1>Food Detail</h1>
         </div>
         <div class="detail-main">
             <div class="detail-img">

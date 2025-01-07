@@ -1,7 +1,7 @@
 <form class="edit-profile-form" method="POST" action="{{ route('updateUser') }}" enctype="multipart/form-data">
     @csrf
     @method("PATCH")
-    <h1 class="edit-profile-form-title">编辑个人资料 | Edit Profile</h1>
+    <h1 class="edit-profile-form-title">Edit Profile</h1>
     <div class="edit-profile-form-input-field">
         <label for="username">Username</label>
         <input id="username" name="username" type="text" placeholder="Min. 5 Characters, Max. 50 Characters">
