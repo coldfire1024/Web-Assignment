@@ -9,14 +9,19 @@
     height: 100vh;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .login-body-background {
-    width: 100%;
+    position: absolute; /* Ensure the background is behind the content */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width of the viewport */
     height: 100vh;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    z-index: -1; 
 }
 
 .login-form {

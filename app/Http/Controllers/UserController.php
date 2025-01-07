@@ -23,13 +23,15 @@ class UserController extends Controller
             'username' => ['bail', 'required', 'string', 'min:5', 'max:50'],
             'email' => ['bail', 'required', 'string', new ValidEmail, 'unique:users'],
             'password' => ['bail', 'required', 'string', 'min:5', 'max:255'],
-            'confirm_password' => ['bail', 'required', 'string', 'min:5', 'max:255', 'same:password']
+            'confirm_password' => ['bail', 'required', 'string', 'min:5', 'max:255', 'same:password'],
+            'role' => ['required', 'in:admin,member'],  // Add role validation
         ]);
 
         $user = User::create([
             'username' => $validated['username'],
             'email' => $validated['email'],
-            'password' => bcrypt($validated['password'])
+            'password' => bcrypt($validated['password']),
+            'role' => $validated['role'],
         ]);
 
         $cart = Cart::create([

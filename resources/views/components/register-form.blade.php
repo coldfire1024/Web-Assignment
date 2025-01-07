@@ -2,6 +2,13 @@
     @csrf
     <h1 class="register-form-title">Register</h1>
     <div class="register-form-input-field">
+    <label for="role">Role</label>
+    <select id="role" name="role">
+        <option value="admin" {{ old('role') == 'admin' ? 'selected' : '' }}>Admin</option>
+        <option value="member" {{ old('role') == 'member' ? 'selected' : '' }}>Member</option>
+    </select>
+</div>
+    <div class="register-form-input-field">
         <label for="email">Email Address</label>
         <input id="email" name="email" type="text" placeholder="Has to end with '@gmail.com'" value="{{ old('email') }}">
     </div>
