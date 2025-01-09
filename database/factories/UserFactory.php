@@ -22,7 +22,6 @@ class UserFactory extends Factory
             'username' => 'admin',
             'email' => 'admin'.'@gmail.com',
             'role' => "admin",
-            'phone' => "000000",
             'address' => "home",
             'profile_picture' => fake()->image(),
             'email_verified_at' => now(),

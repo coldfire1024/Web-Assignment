@@ -21,7 +21,7 @@
 .cart-main {
     box-sizing: border-box;
     width: 100%;
-    color: gold;
+    color: rgb(0, 0, 0);
     display: flex;
     flex-direction: column;
     gap: 32px;
@@ -31,7 +31,7 @@
 .cart-title {
     width: -moz-fit-content;
     width: fit-content;
-    color: gold;
+    color: rgb(0, 0, 0);
 }
 
 .cart-empty-message {
@@ -50,7 +50,7 @@
 .cart-empty-message-title {
     font-size: 1.35em;
     font-weight: 600;
-    color: gold
+    color: rgb(255, 255, 255)
 }
 
 .cart-empty-message-content {

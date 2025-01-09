@@ -16,7 +16,7 @@
 .add-body {
     width: 100%;
     font-style: normal;
-    color: gold;
+    color: rgb(3, 3, 3);
     display: flex;
     flex-direction: column;
     gap: 32px;
@@ -27,7 +27,7 @@
     width: -moz-fit-content;
     width: fit-content;
     align-self: center;
-    color: gold;
+    color: rgb(0, 0, 0);
 }
 
 .add-title h1 {
@@ -36,7 +36,7 @@
 }
 
 .form-body {
-    color: gold;
+    color: rgb(0, 0, 0);
     width: -moz-fit-content;
     width: fit-content;
     display: flex;
@@ -60,7 +60,7 @@
 
 .form-body input[type="file"] {
     font-weight: bold;
-    color: gold;
+    color: rgb(0, 0, 0);
 }
 
 .form-body button {
@@ -76,7 +76,7 @@
 }
 
 .form-col label {
-    color: gold;
+    color: rgb(0, 0, 0);
     font-size: large;
     font-weight: bolder;
 }
@@ -100,7 +100,7 @@
     border: 2px solid black;
     border-radius: 15px;
     background-color: dimgray;
-    color: gold;
+    color: rgb(0, 0, 0);
     font-size: large;
     font-weight: bolder;
 }
@@ -115,13 +115,13 @@
     border-radius: 10px;
     border: 2px solid white;
     background-color: dimgray;
-    color: gold;
+    color: rgb(255, 252, 252);
     font-size: large;
     font-weight: bolder;
 }
 
 .cancel {
-    color: gold;
+    color: rgb(240, 0, 0);
     font-size: large;
     font-weight: bold;
     text-decoration: none;

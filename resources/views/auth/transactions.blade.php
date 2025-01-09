@@ -60,9 +60,6 @@
             @else
                 <div class="cart-empty-message">
                     <div class="cart-empty-message-title">There are no transactions yet...</div>
-                    <div class="cart-empty-message-content">
-                        Poof! Transaction history gone. Time to make delicious memories all over again.
-                        Let's fill this blank page with savory stories and culnary adventures. Bon appetit!
                     </div>
                 </div>
             @endif

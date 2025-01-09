@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>MAGA · Profile</title>
-    <link rel="stylesheet" href="{{ asset("css/protected/profile.css") }}">
+    <link rel="stylesheet" href="{{ asset("css/auth/profile.css") }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
@@ -29,7 +29,36 @@
         </div>
     @endif
     <div class="profile-body-content">
-       <x-EditProfileForm/>
+    <form class="edit-profile-form" method="POST" action="{{ route('updateUser') }}" enctype="multipart/form-data">
+    @csrf
+    @method("PATCH")
+    <h1 class="edit-profile-form-title">Edit Profile</h1>
+    <div class="edit-profile-form-input-field">
+        <label for="username">Username</label>
+        <input id="username" name="username" type="text" placeholder="Min. 5 Characters, Max. 50 Characters">
+    </div>
+    <div class="edit-profile-form-input-field">
+        <label for="email">Email Address</label>
+        <input id="email" name="email" type="text" placeholder="Has to end with '@gmail.com'">
+    </div>
+    <div class="edit-profile-form-input-field">
+        <label for="address">Address</label>
+        <input id="address" name="address" type="text" placeholder="Do not have to be filled, Min. 5 Characters">
+    </div>
+    <div class="edit-profile-form-input-field">
+        <label for="profile-picture">New Profile Image</label>
+        <input id="profile-picture" name="profile-picture" accept="image/*" type="file" placeholder="Must Contains 12 Numbers">
+    </div>
+    <div class="edit-profile-form-input-field">
+        <label for="current-password">Current Password</label>
+        <input id="current-password" name="current-password" type="password"
+            placeholder="Has to be the same with the previous password">
+    </div>
+    <div class="edit-profile-form-footer">
+        <button class="edit-profile-form-submit-button" type="submit">Update Profile</button>
+    </div>
+</form>
+
     </div>
     <x-Footer/>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"

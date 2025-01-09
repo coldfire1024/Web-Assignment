@@ -20,7 +20,7 @@
 .manage-main {
     box-sizing: border-box;
     width: 100%;
-    color: gold;
+    color: rgb(0, 0, 0);
     display: flex;
     flex-direction: column;
     gap: 32px;
@@ -30,7 +30,7 @@
 .manage-title {
     width: -moz-fit-content;
     width: fit-content;
-    color: gold;
+    color: rgb(0, 0, 0);
 }
 
 .manage-form {
@@ -64,7 +64,7 @@
 .manage-bar button {
     border-radius: 10px;
     border: 2px solid white;
-    color: gold;
+    color: rgb(255, 255, 255);
     background-color: dimgray;
     padding: 0.2em 0.5em;
     font-size: medium;
@@ -79,7 +79,7 @@
 }
 
 .manage-form2 label {
-    color: white;
+    color: rgb(0, 0, 0);
     font-weight: bold;
 }
 

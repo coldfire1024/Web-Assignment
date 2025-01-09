@@ -10,6 +10,6 @@ class ProfileController extends Controller
     {
         $success = session()->get('success') ?? null;
 
-        return view('protected.profile')->with('success', $success);
+        return view('auth.profile')->with('success', $success);
     }
 }

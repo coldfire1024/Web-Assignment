@@ -39,7 +39,7 @@ Route::post('/register', [App\Http\Controllers\UserController::class, 'createUse
 // Log Out Page
 Route::get('/logout', [App\Http\Controllers\AuthController::class, 'deauthenticateUser'])->name('deauthenticateUser');
 
-// Protected Pages
+// Member Pages
 Route::middleware(['auth'])->group(function () {
     // Profile Page
     Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');

@@ -37,9 +37,6 @@
                 <input type="text" id="brief_desc" name="brief_desc" placeholder="Maximum 100 Characters">
             </div>
             <div class="form-col">
-                <label for="about_food">Food Full Description: </label>
-                <input type="text" id="about_food" name="about_food" placeholder="Maximum 255 Characters">
-            </div>
             <div class="form-col"> 
                 <label for="food_type">Food Category: </label>
                 <select name="food_type" id="food_type">

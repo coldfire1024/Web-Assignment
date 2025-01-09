@@ -20,6 +20,9 @@
         </div>
     @endif
     <x-Navbar/>
+    <div class="return-button-container" style="margin: 20px;">
+        <a href="{{ url()->previous() }}" class="btn btn-secondary">Return</a>
+    </div>
     <div class="detail-body">
         <div class="detail-title">
             <h1>Food Detail</h1>
@@ -29,30 +32,26 @@
                 <img src="{{asset('storage/images/'.$menu->food_img)}}" alt="Food">
             </div>
             <div class="detail-info">
-                <form action="{{ route('addToCart') }}" method="POST" class="form-info">
-                    @csrf
-                    <input type="hidden" name="menu_id" value="{{$menu->food_id}}">
-                    <h2>{{$menu->food_name}}</h2>
-                    <div class="info-extra">
-                        <h4>Food Type</h4>
-                        <p>{{$menu->food_type}}</p>
-                    </div>
-                    <div class="info-extra">
-                        <h4>Food Price</h4>
-                        <p>${{$menu->food_price}}</p>
-                    </div>
-                    <div class="info-extra">
-                        <h4>Brief Description</h4>
-                        <p>{{$menu->brief_desc}}</p>
-                    </div>
-                    <div class="info-extra">
-                        <h4>About This Food</h4>
-                        <p>{{$menu->about_food}}</p>
-                    </div>
-                    @if(auth()->check() && auth()->user()->role == 'member')
-                        <button type='submit' class="add-cart">Add to Cart</button>
-                    @endif
-                </form>
+    <form action="{{ route('addToCart') }}" method="POST" class="form-info">
+        @csrf
+        <input type="hidden" name="menu_id" value="{{$menu->food_id}}">
+        <h2>{{$menu->food_name}}</h2>
+        <div class="info-extra">
+            <h4>Food Type</h4>
+            <p>{{$menu->food_type}}</p>
+        </div>
+        <div class="info-extra">
+            <h4>Food Price</h4>
+            <p>${{$menu->food_price}}</p>
+        </div>
+        <div class="info-extra">
+            <h4>Brief Description</h4>
+            <p>{{$menu->brief_desc}}</p>
+        </div>
+        @if(auth()->check() && auth()->user()->role == 'member')
+            <button type='submit' class="add-cart">Add to Cart</button>
+        @endif
+    </form>
             </div>
         </div>
     </div>

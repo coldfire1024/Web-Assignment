@@ -87,10 +87,6 @@
             @else
                 <div class="cart-empty-message">
                     <div class="cart-empty-message-title">Your cart is empty...</div>
-                    <div class="cart-empty-message-content">
-                        Looks like your cart is on a diet!
-                        Don't worry, our delicious dishes are just a few clicks away.
-                        Start filling up your cart and let the feast begin!
                     </div>
                 </div>
             @endif
