@@ -79,7 +79,7 @@
                 </table>
                 <div class="checkout-res">
                     <h2>Total: ${{ $total }}</h2>
-                    <form action="{{ route('checkout') }}" method="GET">
+                    <form action="{{ route('cart.checkout') }}" method="GET">
                         @csrf
                         <button type="submit" class="btn btn-danger">Proceed to Checkout</button>
                     </form>

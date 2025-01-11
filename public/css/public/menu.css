@@ -102,6 +102,19 @@
     font-weight: bold;
 }
 
+.Go-cart {
+    border-radius: 10px;
+    border: 2px solid white;
+    background: dimgray;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 0.3em 0.8em;
+    text-decoration: none;
+    color: gold;
+    font-size: large;
+    font-weight: bold;
+}
+
 .edit-profile-page-success-alerts {
     position: fixed;
     z-index: 3;

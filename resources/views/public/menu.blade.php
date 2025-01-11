@@ -50,6 +50,8 @@
         </div>
         @if(auth()->check() && auth()->user()->role == 'member')
             <button type='submit' class="add-cart">Add to Cart</button>
+            <a href="{{ route('cart') }}" class="Go-cart" style="flex-grow: 0;">Go to Cart</a>
+    </div>
         @endif
     </form>
             </div>

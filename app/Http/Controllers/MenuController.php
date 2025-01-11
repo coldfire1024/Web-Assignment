@@ -228,7 +228,6 @@ class MenuController extends Controller
             'food_type' => 'bail|required|string',
             'food_price' => 'bail|required|integer|min:1',
             'brief_desc' => 'bail|required|string|max:100',
-            'about_food' => 'bail|required|string|max:255',
             'food_img' => 'bail|required|image|mimes:jpeg,png,jpg|max:20480'
         ]);
 
@@ -246,7 +245,6 @@ class MenuController extends Controller
             'food_type' => $request->get('food_type'),
             'food_price' => $request->get('food_price'),
             'brief_desc' => $request->get('brief_desc'),
-            'about_food' => $request->get('about_food'),
             'food_img' => $new_img_name
         ];
 
@@ -277,7 +275,6 @@ class MenuController extends Controller
             'food_type' => 'bail|nullable|string',
             'food_price' => 'bail|nullable|integer|min:1',
             'brief_desc' => 'bail|nullable|string|max:100',
-            'about_food' => 'bail|nullable|string|max:255',
             'food_img' => 'bail|nullable|image|mimes:jpeg,png,jpg|max:20480'
         ]);
 

@@ -22,11 +22,13 @@ class TransactionController extends Controller
     {
         $request->validate([
             'full-name' => 'required|min:5',
-            'phone' => 'required|digits:12',
             'country' => 'required',
             'city' => 'required|min:5',
             'card-name' => 'required|min:3',
             'card-number' => 'required|numeric|digits:16',
+            'card-CVC' => 'required',
+            'card-expiry-month' => 'required',
+            'card-expiry-year' => 'required',
             'address' => 'required|min:5',
             'postal-code' => 'required|numeric',
         ]);

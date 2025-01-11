@@ -52,9 +52,13 @@ Route::middleware(['auth'])->group(function () {
     Route::patch('/cart/{cartItemId}/dec', [App\Http\Controllers\CartController::class, 'decreaseQuantity'])->name('decreaseQuantity');
     Route::delete('/cart/{cartItemId}', [App\Http\Controllers\CartController::class, 'deleteFromCart'])->name('deleteFromCart');
 
-    // Checkout Page
-    Route::get('/checkout', [App\Http\Controllers\CartController::class, 'checkout'])->name('checkout');
-    Route::post('/checkout', [App\Http\Controllers\TransactionController::class, 'checkoutOrder'])->name('checkoutOrder');
+    // Checkout Page (Cart checkout view)
+    Route::get('/cart/checkout', [App\Http\Controllers\CartController::class, 'checkout'])->name('cart.checkout');
+    Route::post('/cart/checkout', [App\Http\Controllers\TransactionController::class, 'checkoutOrder'])->name('checkoutOrder');
+
+    // Payment Page (Stripe Checkout view)
+    Route::get('/checkout', [App\Http\Controllers\PaymentController::class, 'showCheckoutForm'])->name('checkout.form');
+    Route::post('/process-payment', [App\Http\Controllers\PaymentController::class, 'processPayment'])->name('process.payment');
 
     // Transaction History Page
     Route::get('/transactions', [App\Http\Controllers\TransactionController::class, 'index'])->name('transactions');

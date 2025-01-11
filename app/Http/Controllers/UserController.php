@@ -46,7 +46,6 @@ class UserController extends Controller
         $validated = $request->validate([
             'username' => ['bail', 'required', 'string', 'min:5', 'max:50'],
             'email' => ['nullable', 'bail', 'string', new ValidEmail, 'unique:users'],
-            'phone' => ['nullable', 'bail', 'string', new ValidPhone, 'unique:users'],
             'address' => ['nullable', 'bail', 'string', 'min:5'],
             'profile-picture' => ['nullable', 'bail', 'image', 'mimes:jpeg,png,jpg'],
             'current-password' => ['bail', 'required', 'string'],
@@ -64,10 +63,6 @@ class UserController extends Controller
 
         if (!is_null($request->get('email'))) {
             $updatedUser['email'] = $validated['email'];
-        }
-
-        if (!is_null($request->get('phone'))) {
-            $updatedUser['phone'] = $validated['phone'];
         }
 
         if (!is_null($request->get('address'))) {
