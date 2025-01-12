@@ -284,7 +284,6 @@ class MenuController extends Controller
         $menu['food_type'] = $request->get('food_type') ?? $menu->food_type;
         $menu['food_price'] = $request->get('food_price') ?? $menu->food_price;
         $menu['brief_desc'] = $request->get('brief_desc') ?? $menu->brief_desc;
-        $menu['about_food'] = $request->get('about_food') ?? $menu->about_food;
         $menu['food_name'] = $request->get('food_name') ?? $menu->food_name;
 
         if($request->file('food_img')!=null) {

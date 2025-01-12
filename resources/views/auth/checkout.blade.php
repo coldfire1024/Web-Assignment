@@ -76,8 +76,8 @@
             <input id="card-number" name="card-number" type="text" placeholder="Must be numerical and have 16 characters" value="{{ old('card-number') }}">
         </div>
         <div class="edit-profile-form-input-field">
-            <label for="card-CVC">Card CVC</label>
-            <input id="card-CVC" name="card-CVC" type="text" placeholder="Must be numerical" value="{{ old('card-CVC') }}">
+            <label for="card-cvc">Card CVC</label>
+            <input id="card-cvc" name="card-cvc" type="text" placeholder="Must be numerical" value="{{ old('card-cvc') }}">
         </div>
         <div class="edit-profile-form-input-field">
             <label for="card-expiry-month">Card Expiry Month</label>
@@ -94,30 +94,56 @@
         <button class="edit-profile-form-submit-button" type="submit">Place Order</button>
     </div>
 </form>
-<script src="https://js.stripe.com/v3/"></script>
-<script>
-    const stripe = Stripe('{{ config('stripe.stripe_key') }}'); // Add your publishable key
-    const elements = stripe.elements();
-    const card = elements.create('card');
-    card.mount('#card-element');
-
-    const form = document.getElementById('payment-form');
-    form.addEventListener('submit', async (event) => {
-        event.preventDefault();
-        const { token, error } = await stripe.createToken(card);
-
-        if (error) {
-            document.getElementById('card-errors').textContent = error.message;
-        } else {
-            const hiddenInput = document.createElement('input');
-            hiddenInput.setAttribute('type', 'hidden');
-            hiddenInput.setAttribute('name', 'stripeToken');
-            hiddenInput.setAttribute('value', token.id);
-            form.appendChild(hiddenInput);
-            form.submit();
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+<script type="text/javascript">
+$(function() {
+  var $form = $(".require-validation");
+  $('form.require-validation').bind('submit', function(e) {
+    var $form = $(".require-validation"),
+    inputSelector = ['input[type=email]', 'input[type=password]', 'input[type=text]', 'input[type=file]', 'textarea'].join(', '),
+    $inputs = $form.find('.required').find(inputSelector),
+    $errorMessage = $form.find('div.error'),
+    valid = true;
+    $errorMessage.addClass('hide');
+    $('.has-error').removeClass('has-error');
+    $inputs.each(function(i, el) {
+        var $input = $(el);
+        if ($input.val() === '') {
+            $input.parent().addClass('has-error');
+            $errorMessage.removeClass('hide');
+            e.preventDefault();
         }
     });
+    if (!$form.data('cc-on-file')) {
+      e.preventDefault();
+      Stripe.setPublishableKey($form.data('stripe-publishable-key'));
+      Stripe.createToken({
+          number: $('.card-number').val(),
+          cvc: $('.card-cvc').val(),
+          exp_month: $('.card-expiry-month').val(),
+          exp_year: $('.card-expiry-year').val()
+      }, stripeResponseHandler);
+    }
+  });
+
+  function stripeResponseHandler(status, response) {
+      if (response.error) {
+          $('.error')
+              .removeClass('hide')
+              .find('.alert')
+              .text(response.error.message);
+      } else {
+          /* token contains id, last4, and card type */
+          var token = response['id'];
+          $form.find('input[type=text]').empty();
+          $form.append("<input type='hidden' name='stripeToken' value='" + token + "'/>");
+          $form.get(0).submit();
+      }
+  }
+});
+
 </script>
+
     </div>
     <x-Footer/>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">

@@ -26,7 +26,7 @@ class TransactionController extends Controller
             'city' => 'required|min:5',
             'card-name' => 'required|min:3',
             'card-number' => 'required|numeric|digits:16',
-            'card-CVC' => 'required',
+            'card-cvc' => 'required',
             'card-expiry-month' => 'required',
             'card-expiry-year' => 'required',
             'address' => 'required|min:5',
