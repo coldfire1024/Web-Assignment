@@ -146,3 +146,10 @@
 .edit-profile-page-error-alerts .alert-message {
     margin-right: 1em;
 }
+
+.carousel-item img {
+    width: 100%; /* Ensures the image scales with the carousel width */
+    max-height: 650px; /* Sets a maximum height */
+    
+    object-position: center; /* Centers the cropped portion of the image */
+}

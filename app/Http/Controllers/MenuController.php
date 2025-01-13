@@ -264,7 +264,8 @@ class MenuController extends Controller
 
     public function updatePage(Request $request) {
         $food_id = $request->get('food_id');
-        return view('auth/update', compact('food_id'));
+        $menu = Menu::findOrFail($food_id);
+        return view('auth/update', compact('menu'));
     }
 
     public function updateMenu(Request $request) {
@@ -278,13 +279,12 @@ class MenuController extends Controller
             'food_img' => 'bail|nullable|image|mimes:jpeg,png,jpg|max:20480'
         ]);
 
-        $menu = Menu::where('food_id',$request->get('food_id'))->first();
+        $menu = Menu::findOrFail($request->get('food_id'));
 
-        $menu['food_name'] = $request->get('food_name') ?? $menu->food_name;
-        $menu['food_type'] = $request->get('food_type') ?? $menu->food_type;
-        $menu['food_price'] = $request->get('food_price') ?? $menu->food_price;
-        $menu['brief_desc'] = $request->get('brief_desc') ?? $menu->brief_desc;
-        $menu['food_name'] = $request->get('food_name') ?? $menu->food_name;
+        $menu->food_name = $request->input('food_name', $menu->food_name);
+        $menu->food_type = $request->input('food_type', $menu->food_type);
+        $menu->food_price = $request->input('food_price', $menu->food_price);
+        $menu->brief_desc = $request->input('brief_desc', $menu->brief_desc);
 
         if($request->file('food_img')!=null) {
             $real_img_name = $request->file('food_img')->getClientOriginalName();
