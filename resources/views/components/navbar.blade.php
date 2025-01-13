@@ -8,6 +8,7 @@
         </div>
         <div class="navbar-links">
             <a href="{{ route('home') }}">Home</a>
+            <a href="{{ route('about') }}">About Us</a>
             @if(auth()->check() && auth()->user()->role == 'member')
                 <a href="{{ route('search') }}">Search Food</a>
                 <a href="{{ route('cart') }}">Cart</a>

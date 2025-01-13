@@ -312,4 +312,10 @@ class MenuController extends Controller
 
         return redirect()->route('returnManageMenu')->with(['result' => $result]);
     }
+
+    public function about()
+    {
+        // Logic for the About Us Page
+        return view('auth/about');
+    }
 }

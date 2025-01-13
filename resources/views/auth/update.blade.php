@@ -30,11 +30,11 @@
             @method('put')
             <div class="form-col">
                 <label for="food_name">Food Name: </label>
-                <input type="text" id="food_name" name="food_name" placeholder="Minimum 5 Characters">
+                <input type="text" id="food_name" name="food_name" placeholder="Minimum 5 Characters" value="{{ old('food_name', $food->food_name) }}">
             </div>
             <div class="form-col">
                 <label for="brief-Desc">Food Brief Description: </label>
-                <input type="text" id="brief_desc" name="brief_desc" placeholder="Maximum 100 Characters">
+                <input type="text" id="brief_desc" name="brief_desc" placeholder="Maximum 100 Characters" value="{{ old('brief_desc', $food->brief_desc) }}">
             </div>
             <div class="form-col">
             <div class="form-col"> 
@@ -47,7 +47,7 @@
             </div>
             <div class="form-col">
                 <label for="food_price">Food Price: </label>
-                <input type="number" id="food_price" name="food_price" placeholder="Must be more than 0">
+                <input type="number" id="food_price" name="food_price" placeholder="Must be more than 0" value="{{ old('food_price', $food->food_price) }}">
             </div>
             <div class="form-col">
                 <label for="food_img">Food Picture: </label>

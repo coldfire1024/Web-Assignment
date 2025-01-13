@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 // Home Page
 Route::get('/', [App\Http\Controllers\MenuController::class, 'index'])->name('home');
 
+// About Us
+Route::get('/about', [App\Http\Controllers\MenuController::class, 'about'])->name('about');
+
 // Food Detail Page
 Route::get('/menu/{food_id}', [App\Http\Controllers\MenuController::class, 'detail'])->name('detail');
 
