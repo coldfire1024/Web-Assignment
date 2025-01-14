@@ -41,12 +41,12 @@
                     <p>CEO & Founder</p>
                 </div>
                 <div class="col-md-4 text-center">
-                    <img src="{{ asset('images/team-chef.jpg') }}" class="img-fluid rounded-circle team-img" alt="Head Chef">
+                    <img src="{{ asset('images/team-chef.jpeg') }}" class="img-fluid rounded-circle team-img" alt="Head Chef">
                     <h5>Ng Zhe Wei</h5>
                     <p>Head Chef</p>
                 </div>
                 <div class="col-md-4 text-center">
-                    <img src="{{ asset('images/team-manager.jpg') }}" class="img-fluid rounded-circle team-img" alt="Manager">
+                    <img src="{{ asset('images/team-manager.jpeg') }}" class="img-fluid rounded-circle team-img" alt="Manager">
                     <h5>Tang Yong Jun</h5>
                     <p>Operations Manager</p>
                 </div>
