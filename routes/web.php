@@ -44,9 +44,13 @@ Route::get('/logout', [App\Http\Controllers\AuthController::class, 'deauthentica
 
 // Member Pages
 Route::middleware(['auth'])->group(function () {
-    // Profile Page
-    Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
-    Route::patch('/profile', [App\Http\Controllers\UserController::class, 'updateUser'])->name('updateUser');
+
+    // View Profile Page
+    Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'show'])->name('profile');
+
+    // Edit Profile Page
+    Route::get('/profile/edit', [App\Http\Controllers\ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile/update', [App\Http\Controllers\UserController::class, 'updateUser'])->name('updateUser');
 
     // Cart Page
     Route::get('/cart', [App\Http\Controllers\CartController::class, 'index'])->name('cart');
